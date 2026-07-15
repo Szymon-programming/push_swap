@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/15 12:18:56 by jasiuda          ###   ########.fr       */
+/*   Created: 2026/07/15 12:12:27 by jasiuda           #+#    #+#             */
+/*   Updated: 2026/07/15 12:19:26 by jasiuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "stack.h"
 
-typedef struct	s_node
+t_stack	*stack_new(void)
 {
-	int				value;
-	int				index;
-	struct s_node	*prev;
-	struct s_node	*next;
-}	t_node;
+	t_stack	*s;
 
-typedef struct	s_stack
-{
-	t_node *top;
-	t_node *bottom;
-	int		size;
-}	t_stack;
-
-t_stack	*stack_new(void);
+	s = malloc(sizeof(t_stack));
+	if (!s)
+		return (NULL);
+	s->top = NULL;
+	s->bottom = NULL;
+	s->size = 0;
+	return (s);
+}
