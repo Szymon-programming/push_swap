@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = stack.c stack_utils.c
+SRCS = stack.c stack_utils.c swap.c push.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
