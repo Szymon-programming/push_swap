@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:01:50 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/20 14:04:00 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/20 14:36:53 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,28 @@ int	ft_strcmp(const char *s1, const char *s2)
 // ustawia konkretną flagę w strukturze options na 1(odpowiednik true bo nie ma bool)
 int	set_specific_flag(char *argv, t_options *options)
 {
-	char	*flags[5];
+	char	*flags[4];
 	int		i;
 
-	flags[0] = "--bench";
-	flags[1] = "--simple";
-	flags[2] = "--medium";
-	flags[3] = "--complex";
-	flags[4] = "--adaptive";
-	i = 0;
-	while (i < 5)
+	flags[0] = "--simple";
+	flags[1] = "--medium";
+	flags[2] = "--complex";
+	flags[3] = "--adaptive";
+	if (ft_strcmp(argv, "--bench") == 0)
+	{
+		return (options->bench = 1, 0);
+	}
+	i = -1;
+	while (++i < 4)
 	{
 		if (ft_strcmp(argv, flags[i]) == 0)
 		{
+			if (options->simple || options->medium
+				|| options->complex || options->adaptive)
+				return (-1);
 			activate_flag(i, options);
 			return (0);
 		}
-		i++;
 	}
 	return (-1);
 }
