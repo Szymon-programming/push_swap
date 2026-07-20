@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 11:23:36 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 11:31:23 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 14:12:41 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "push_swap.h"
 
 static void	push(t_stack *dest, t_stack *src)
 {

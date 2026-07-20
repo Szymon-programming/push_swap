@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:12:27 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 10:36:08 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 14:12:41 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "push_swap.h"
 
 int	stack_size(const t_stack *s)
 {

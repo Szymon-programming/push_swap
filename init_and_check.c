@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:02:13 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/20 14:04:00 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/20 14:11:08 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	check_flags(int argc, char *argv[], t_options *options)
 				return (-1);
 		}
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (i);

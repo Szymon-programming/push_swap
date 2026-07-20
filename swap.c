@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 10:45:41 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 11:13:06 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 14:12:41 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "push_swap.h"
 
 static void	swap(t_stack *s)
 {

@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 11:25:37 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/17 10:57:24 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/20 14:13:43 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	main(int argc, char *argv[])
 	int			i;
 	t_options	options;
 
-	if (i = init_and_check(argc, argv, &options) == -1)
+	i = init_and_check(argc, argv, &options);
+	if (i == -1)
 		write(1, "Error\n", 6);
 	parser(argc, argv, i);
 	return (0);

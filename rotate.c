@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 12:20:07 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 13:08:33 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 14:12:41 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "push_swap.h"
 
 static void	rotate(t_stack *s)
 {
