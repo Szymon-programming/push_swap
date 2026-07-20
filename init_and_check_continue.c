@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/17 09:49:52 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/17 10:23:27 by schoinsk         ###   ########.fr       */
+/*   Created: 2026/07/20 14:01:50 by schoinsk          #+#    #+#             */
+/*   Updated: 2026/07/20 14:04:00 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ static void	activate_flag(int index, t_options *options)
 		options->adaptive = 1;
 }
 
-//porównuje stringi, wykorzystuje tą funkcję do sprawdzenia, czy wpisano prawidłową flagę,
-//jest to przerobione strncmp z libft, ponieważ nie potrzebuje parametru długości stringa
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t			i;

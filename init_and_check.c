@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/17 09:49:48 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/17 10:22:39 by schoinsk         ###   ########.fr       */
+/*   Created: 2026/07/20 14:02:13 by schoinsk          #+#    #+#             */
+/*   Updated: 2026/07/20 14:04:00 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	init_options(t_options *options)
 	options->adaptive = 0;
 }
 
-// sprawdza flagi, wykonuje się dopóki trafia na flagi, jeśli trafi na coś innego zwraca indeks
+// sprawdza flagi, wykonuje się dopóki trafia na flagi, jeśli trafi na coś innego zwraca wskażnik na indeks
 // na którym konczą się flagi
 int	check_flags(int argc, char *argv[], t_options *options)
 {
@@ -38,7 +38,7 @@ int	check_flags(int argc, char *argv[], t_options *options)
 				return (-1);
 		}
 		else
-			break ;
+			break;
 		i++;
 	}
 	return (i);
@@ -56,8 +56,12 @@ int	is_flag(char *str)
 // czy to co weszło było prawidłowymi argumentami
 int	init_and_check(int argc, char *argv[], t_options *options)
 {
+	int	i;
+
+	i = 0;
 	if (argc < 2)
 		return (-1);
 	init_options(options);
-	return (check_flags(argc, argv, options));
+	i = check_flags(argc, argv, options);
+	return (i);
 }

@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 13:08:28 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 14:06:16 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft/libft.h"
+
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
+
+typedef struct s_options
+{
+	int simple;
+	int medium;
+	int complex;
+	int adaptive;
+	int bench;
+} t_options;
 
 typedef struct s_node
 {
@@ -47,3 +59,15 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+
+//funkcje parsera
+int init_and_check(int argc, char *argv[], t_options *options);
+int set_specific_flag(char *argv, t_options *options);
+int ft_strcmp(const char *s1, const char *s2);
+int is_flag(char *str);
+int check_flags(int argc, char *argv[], t_options *options);
+int *parser(int argc, char *argv[], int n);
+int *get_parsed_numbers(int argc, char *argv[], int i);
+void exit_error(void);
+
+#endif
