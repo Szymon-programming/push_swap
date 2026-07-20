@@ -6,11 +6,11 @@
 /*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:12:27 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 10:34:39 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 10:36:08 by jasiuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stack.h>
+#include "stack.h"
 
 int	stack_size(const t_stack *s)
 {
