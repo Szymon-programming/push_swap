@@ -6,7 +6,7 @@
 /*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:12:27 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 10:34:26 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 12:40:17 by jasiuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ int	stack_pop(t_stack *s)
 	node = s->top;
 	value = node->value;
 	s->top = node->next;
-	if (s->top)
-		s->top->prev = NULL;
+	s->top->prev = NULL;
 	s->size--;
 	free(node);
 	return (value);
