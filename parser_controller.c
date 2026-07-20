@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:02:42 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/20 14:36:10 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/20 15:36:25 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	free_matrix(char **split_argv)
 // funkcja zarządzająca, czy trzeba zesplitować wartości
 // które wpadły jako "1 2 3 4 5"
 // czy od razu wrzucić wartości 1 2 3 4 5
-int	*get_parsed_numbers(int argc, char *argv[], int i)
+int	*get_parsed_numbers(int argc, char *argv[], int i, int *size)
 {
 	int		*numbers;
 	int		split_argc;
@@ -50,9 +50,13 @@ int	*get_parsed_numbers(int argc, char *argv[], int i)
 	split_argv = ft_split(argv[i], ' ');
 	split_argc = get_matrix_size(split_argv);
 	if (argc - i > 1)
+	{
+		*size = (argc - i);
 		return (parser(argc, argv, i));
+	}
 	if (argc - i == 1)
 	{
+		*size = split_argc;
 		numbers = parser(split_argc, split_argv, 0);
 		free_matrix(split_argv);
 	}

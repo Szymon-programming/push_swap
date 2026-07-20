@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/16 11:25:37 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/20 17:17:20 by schoinsk         ###   ########.fr       */
+/*   Created: 2026/07/20 17:33:32 by schoinsk          #+#    #+#             */
+/*   Updated: 2026/07/20 17:48:57 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+float	compute_disorder(t_stack a)
 {
-	int			i;
-	int			*numbers;
-	int			size;
-	t_options	options;
+	int	mistakes;
+	int	total_pairs;
+	int	i;
+	int	j;
 
-	i = init_and_check(argc, argv, &options);
-	if (i == -1)
-		exit_error();
-	numbers = get_parsed_numbers(argc, argv, i, &size);
-	if (numbers == NULL)
-		exit_error();
-	i = stack_operations_controller(numbers, size, &options);
-	return (0);
+	mistakes = 0;
+	total_pairs = 0;
+	i = 0;
+	while (i < stack_size(a) - 1)
+	{
+		j = i+1;
+		while (j <= stack_size(a) - 1)
+		{
+			total_pairs += 1;
+			if (a[i] > a[j])
+				mistakes += 1;
+		}
+	}
+	retrun (mistakes / total_pairs);
 }
