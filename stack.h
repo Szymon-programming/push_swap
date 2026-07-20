@@ -6,11 +6,12 @@
 /*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 10:33:13 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/20 11:13:09 by jasiuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft/libft.h"
 
 typedef struct s_node
 {
@@ -35,3 +36,6 @@ int		stack_is_empty(const t_stack *s);
 int		stack_peek(const t_stack *s);
 int		stack_is_sorted(const t_stack *s);
 void	stack_clear(t_stack *s);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
