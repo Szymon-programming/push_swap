@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 17:17:20 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/21 13:50:52 by jasiuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+
+// algorytmy
+void	radix_sort(t_stack *a, t_stack *b);
 
 //funkcje parsera
 int		init_and_check(int argc, char *argv[], t_options *options);
