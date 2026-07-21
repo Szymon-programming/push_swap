@@ -6,7 +6,7 @@
 /*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/21 13:50:52 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/21 13:53:01 by jasiuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	rrr(t_stack *a, t_stack *b);
 
 // algorytmy
 void	radix_sort(t_stack *a, t_stack *b);
+void	bubble_sort(t_stack *a, t_stack *b);
 
 //funkcje parsera
 int		init_and_check(int argc, char *argv[], t_options *options);
