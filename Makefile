@@ -1,11 +1,14 @@
 NAME = push_swap
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = stack.c stack_utils.c swap.c push.c rotate.c rev_rotate.c index.c sort_radix.c sort_bubble.c
+SRCS = stack.c stack_utils.c swap.c push.c rotate.c rev_rotate.c bench_mode_controller.c disorder.c \
+exit_function.c init_and_check_continue.c main.c operation_controller.c parser_controller.c parser.c \
+stack_controller.c index.c sort_radix.c init_and_check.c
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

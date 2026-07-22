@@ -6,31 +6,33 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 17:33:32 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/20 17:48:57 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/22 14:58:57 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	compute_disorder(t_stack a)
+float	compute_disorder(const t_stack *a)
 {
-	int	mistakes;
-	int	total_pairs;
-	int	i;
-	int	j;
+	int		mistakes;
+	int		total_pairs;
+	t_node	*curr;
+	t_node	*next_node;
 
 	mistakes = 0;
 	total_pairs = 0;
-	i = 0;
-	while (i < stack_size(a) - 1)
+	curr = a->top;
+	while (curr)
 	{
-		j = i+1;
-		while (j <= stack_size(a) - 1)
+		next_node = curr->next;
+		while (next_node)
 		{
-			total_pairs += 1;
-			if (a[i] > a[j])
-				mistakes += 1;
+			total_pairs++;
+			if (curr->value > next_node->value)
+				mistakes++;
+			next_node = next_node->next;
 		}
+		curr = curr->next;
 	}
-	retrun (mistakes / total_pairs);
+	return ((float)mistakes / (float)total_pairs * 100.0f);
 }

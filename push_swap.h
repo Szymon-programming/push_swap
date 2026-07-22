@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/21 13:53:01 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/22 15:54:02 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,30 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
+typedef struct s_bench
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	total_operations;
+}	t_bench;
+
+typedef struct s_data
+{
+	t_stack	*a;
+	t_stack	*b;
+	t_bench	bench;
+	float	disorder;
+}	t_data;
+
 t_stack	*stack_new(void);
 void	stack_push(t_stack *s, int value);
 int		stack_pop(t_stack *s);
@@ -62,7 +86,7 @@ void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
 // algorytmy
-void	radix_sort(t_stack *a, t_stack *b);
+void	radix_sort(t_data *data);
 void	bubble_sort(t_stack *a, t_stack *b);
 
 //funkcje parsera
@@ -72,8 +96,13 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		is_flag(char *str);
 int		check_flags(int argc, char *argv[], t_options *options);
 int		*parser(int argc, char *argv[], int n);
-int		*get_parsed_numbers(int argc, char *argv[], int i);
+int		*get_parsed_numbers(int argc, char *argv[], int i, int *size);
 void	exit_error(void);
-int		stack_operations_controller(int *numbers, int size, t_options options);
+int		stack_operations_controller(int *numbers, int size, t_options *options, t_data *data);
+
+//funkcje benchmoda
+void	print_bench(t_data *data, t_options *options);
+float	compute_disorder(const t_stack *a);
+void	do_operation(t_data *data, char *operation);
 
 #endif
