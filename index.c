@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jasiuda <jasiuda@student.42warsaw.pl>      +#+  +:+       +#+        */
+/*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 17:11:56 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 18:58:27 by jasiuda          ###   ########.fr       */
+/*   Updated: 2026/07/23 15:31:31 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort(int *arr, int len)
+
+void sort(int *arr, int len)
 {
-	int	i;
-	int	j;
-	int	temp;
+	int i;
+	int j;
+	int temp;
 
 	i = 0;
 	while (i < len - 1)
@@ -36,35 +37,35 @@ void	sort(int *arr, int len)
 	}
 }
 
-void	index_stack(t_stack *s)
+void index_stack(t_data *data)
 {
-	int		*arr;
-	t_node	*current;
-	int		i;
-	int		j;
+	int *arr;
+	t_node *current;
+	int i;
+	int j;
 
-	arr = malloc(sizeof(int) * s->size);
+	arr = malloc(sizeof(int) * data->a->size);
 	if (!arr)
-		return ;
-	current = s->top;
+		return;
+	current = data->a->top;
 	i = 0;
-	while (current)
+	while (current && (i < data->a->size))
 	{
 		arr[i] = current->value;
 		i++;
 		current = current->next;
 	}
-	sort(arr, s->size);
-	current = s->top;
+	sort(arr, data->a->size);
+	current = data->a->top;
 	while (current)
 	{
 		j = 0;
-		while (j < s->size)
+		while (j < data->a->size)
 		{
 			if (arr[j] == current->value)
 			{
 				current->index = j;
-				break ;
+				break;
 			}
 			j++;
 		}

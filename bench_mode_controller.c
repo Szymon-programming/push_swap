@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 14:38:20 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/22 15:24:07 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,11 @@ void	print_bench(t_data *data, t_options *options)
 	ft_putstr_fd("%\n", 2);
 	ft_putstr_fd("[bench] strategy: ", 2);
 	if (options->simple == 1)
-		ft_putstr_fd("Simple\n", 2);
+		ft_putstr_fd("Simple / O(n2)\n", 2);
 	else if (options->medium == 1)
-		ft_putstr_fd("Medium\n", 2);
+		ft_putstr_fd("Medium / O(n√n)\n", 2);
 	else if (options->complex == 1)
-		ft_putstr_fd("Complex\n", 2);
+		ft_putstr_fd("Complex / O(n log n)\n", 2);
 	else
 	{
 		ft_putstr_fd("Adaptive / ", 2);

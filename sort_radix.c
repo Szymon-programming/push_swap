@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 10:53:30 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/22 15:41:10 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	get_max_bits(int size)
 	int	max_bits;
 
 	max_bits = 0;
-	while ((size - 1) >> max_bits)
+	while (((size - 1) >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
 }

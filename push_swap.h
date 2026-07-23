@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/22 15:54:02 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:31:31 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,13 @@ void	rrr(t_stack *a, t_stack *b);
 
 // algorytmy
 void	radix_sort(t_data *data);
-void	bubble_sort(t_stack *a, t_stack *b);
+//void	bubble_sort(t_stack *a, t_stack *b);
+void	index_stack(t_data *data);
+void	selection_sort_with_index(t_data *data);
+void	chank_sort(t_data *data);
+void	adaptive_sort(t_data *data);
+void	bring_to_top_b(t_data *data, int position);
+int		ft_sqrt(int number);
 
 //funkcje parsera
 int		init_and_check(int argc, char *argv[], t_options *options);

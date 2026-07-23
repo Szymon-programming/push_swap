@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 17:33:32 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/22 14:58:57 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ float	compute_disorder(const t_stack *a)
 	t_node	*curr;
 	t_node	*next_node;
 
+	if (!a || a->size < 2)
+		return (0.0f);
 	mistakes = 0;
 	total_pairs = 0;
 	curr = a->top;

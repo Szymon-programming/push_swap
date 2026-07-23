@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 10:45:41 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 14:12:41 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	swap(t_stack *s)
 	first->next = sec->next;
 	if (sec->next)
 		sec->next->prev = first;
+	sec->next = first;
 	first->prev = sec;
 	sec->prev = NULL;
 	s->top = sec;

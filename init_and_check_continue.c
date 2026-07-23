@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:01:50 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/20 14:36:53 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:31:31 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 static void	activate_flag(int index, t_options *options)
 {
 	if (index == 0)
-		options->bench = 1;
-	if (index == 1)
 		options->simple = 1;
-	if (index == 2)
+	else if (index == 1)
 		options->medium = 1;
-	if (index == 3)
+	else if (index == 2)
 		options->complex = 1;
-	if (index == 4)
+	else if (index == 3)
 		options->adaptive = 1;
 }
 
@@ -57,16 +55,13 @@ int	set_specific_flag(char *argv, t_options *options)
 	flags[2] = "--complex";
 	flags[3] = "--adaptive";
 	if (ft_strcmp(argv, "--bench") == 0)
-	{
 		return (options->bench = 1, 0);
-	}
 	i = -1;
 	while (++i < 4)
 	{
 		if (ft_strcmp(argv, flags[i]) == 0)
 		{
-			if (options->simple || options->medium
-				|| options->complex || options->adaptive)
+			if (options->simple || options->medium || options->complex || options->adaptive)
 				return (-1);
 			activate_flag(i, options);
 			return (0);

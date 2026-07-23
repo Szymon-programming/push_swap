@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 15:01:35 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/22 15:53:39 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:31:31 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	sorting_method_chooser(t_data *data, t_options *options)
 {
 	if (options->simple == 1)
-		radix_sort(data);
+		selection_sort_with_index(data);
 	else if (options->medium == 1)
-		radix_sort(data);
+		chank_sort(data);
 	else if (options->complex == 1)
 		radix_sort(data);
 	else
-		radix_sort(data);
+		adaptive_sort(data);
 }
 
 static void	init_stack(t_data *data, int *numbers, int size)
@@ -29,6 +29,7 @@ static void	init_stack(t_data *data, int *numbers, int size)
 	while (size > 0)
 	{
 		stack_push(data->a, numbers[size - 1]);
+		size--;
 	}
 }
 
@@ -39,7 +40,8 @@ int	stack_operations_controller(int *numbers, int size, t_options *options, t_da
 	init_stack(data, numbers, size);
 	data->disorder = compute_disorder(data->a);
 	if (stack_is_sorted(data->a) == 1)
-		return (1);
+		return (0);
+	index_stack(data);
 	sorting_method_chooser(data, options);
 	return (0);
 }

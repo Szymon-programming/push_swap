@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:02:42 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/20 15:36:25 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	*get_parsed_numbers(int argc, char *argv[], int i, int *size)
 {
 	int		*numbers;
 	int		split_argc;
-	char	**split_argv;
+	char 	**split_argv;
 
 	split_argv = ft_split(argv[i], ' ');
 	split_argc = get_matrix_size(split_argv);
@@ -54,11 +54,12 @@ int	*get_parsed_numbers(int argc, char *argv[], int i, int *size)
 		*size = (argc - i);
 		return (parser(argc, argv, i));
 	}
-	if (argc - i == 1)
-	{
-		*size = split_argc;
-		numbers = parser(split_argc, split_argv, 0);
-		free_matrix(split_argv);
-	}
+	split_argv = ft_split(argv[i], ' ');
+	if (!split_argv)
+		return (NULL);
+	split_argc = get_matrix_size(split_argv);
+	*size = split_argc;
+	numbers = parser(split_argc, split_argv, 0);
+	free_matrix(split_argv);
 	return (numbers);
 }
