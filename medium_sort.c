@@ -6,73 +6,111 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 14:55:37 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:33:03 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/23 17:48:28 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_max_position(t_stack *b)
+static int	get_max_position_b(t_data *data)
 {
 	t_node	*current;
-	int		max_index;
-	int		max_position;
-	int		current_position;
+	int		max_val;
+	int		max_pos;
+	int		current_pos;
 
-	if (!b || !b->top)
+	if (!data->b || !data->b->top)
 		return (0);
-	current = b->top;
-	max_index = current->index;
-	max_position = 0;
-	current_position = 0;
+	current = data->b->top;
+	max_val = current->value;
+	max_pos = 0;
+	current_pos = 0;
 	while (current)
 	{
-		if (current->index > max_index)
+		if (current->value > max_val)
 		{
-			max_index = current->index;
-			max_position = current_position;
+			max_val = current->value;
+			max_pos = current_pos;
 		}
 		current = current->next;
-		current_position++;
+		current_pos++;
 	}
-	return (max_position);
+	return (max_pos);
+}
+
+static void	bring_to_top_b(t_data *data, int position)
+{
+	int	stack_size;
+	int	shifts;
+
+	if (position <= 0)
+		return ;
+	stack_size = data->b->size;
+	if (position <= stack_size / 2)
+	{
+		shifts = position;
+		while (shifts > 0)
+		{
+			do_operation(data, "rb");
+			shifts--;
+		}
+	}
+	else
+	{
+		shifts = stack_size - position;
+		while (shifts > 0)
+		{
+			do_operation(data, "rrb");
+			shifts--;
+		}
+	}
 }
 
 static void	push_to_b(t_data *data, int *i, int chunk_size)
 {
-	if (data->a->top->index <= *i)
+	int	current_index;
+
+	current_index = data->a->top->index;
+	if (current_index >= *i && current_index < (*i + chunk_size / 2))
 	{
 		do_operation(data, "pb");
 		do_operation(data, "rb");
-		(*i)++;
 	}
-	else if (data->a->top->index <= *i + chunk_size)
+	else if (current_index >= *i && current_index < (*i + chunk_size))
 	{
 		do_operation(data, "pb");
-		(*i)++;
 	}
 	else
+	{
 		do_operation(data, "ra");
-}
-
-static void	push_to_a(t_data *data)
-{
-	int max_position;
-
-	max_position = get_max_position(data->b);
-	bring_to_top_b(data, max_position);
-	do_operation(data, "pa");
+	}
 }
 
 void	chank_sort(t_data *data)
 {
-	int chunk_size;
-	int i;
+	int	chunk_size;
+	int	i;
+	int	position;
 
-	chunk_size = ft_sqrt(data->a->size) + 7;
+	if (data->a->size <= 5)
+		chunk_size = 4;
+	else if (data->a->size <= 100)
+		chunk_size = 15;
+	else
+		chunk_size = 30;
 	i = 0;
 	while (data->a->size > 0)
+	{
 		push_to_b(data, &i, chunk_size);
+		if (data->b->size == i + chunk_size)
+			i += chunk_size;
+		else if (data->a->size == 0)
+			break ;
+	}
 	while (data->b->size > 0)
-		push_to_a(data);
+	{
+		position = get_max_position_b(data);
+		bring_to_top_b(data, position);
+		do_operation(data, "pa");
+	}
 }
