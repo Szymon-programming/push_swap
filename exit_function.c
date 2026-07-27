@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 13:59:58 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 17:05:36 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:40:48 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,12 @@
 void	exit_error(void)
 {
 	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	exit_and_free(t_data *data, int *numbers)
+{
+	write(2, "Error\n", 6);
+	free_data(data, numbers);
 	exit(1);
 }

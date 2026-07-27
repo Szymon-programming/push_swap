@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 15:01:35 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 16:37:45 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:44:24 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,20 @@ static void	init_stack(t_stack *s, int *numbers, int size)
 	}
 }
 
-int	stack_op_con(int *numbers, int size, t_options *options, t_data *data)
+void	stack_op_con(int *numbers, int size, t_options *options, t_data *data)
 {
 	data->a = stack_new();
 	data->b = stack_new();
 	init_stack(data->a, numbers, size);
 	data->disorder = compute_disorder(data->a);
 	if (stack_is_sorted(data->a) == 1)
-		return (0);
+	{
+		free_data(data, numbers);
+		exit(0);
+	}
 	index_stack(data->a);
 	sorting_method_chooser(data, options);
-	return (0);
+	if (options->bench == 1)
+		print_bench(data, options);
+	free_data(data, numbers);
 }

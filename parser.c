@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 10:27:25 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 16:36:50 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:09:41 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,6 @@ int	*parser(int argc, char *argv[], int n)
 		i++;
 	}
 	if (i < argc)
-		return (free(numbers), NULL);
+		return (free(numbers), numbers = NULL, NULL);
 	return (numbers);
 }

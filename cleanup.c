@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 10:30:48 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/27 16:33:29 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:15:59 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	free_data(t_data *data, int **numbers)
+void	free_data(t_data *data, int *numbers)
 {
-	if (numbers && *numbers)
+	if (numbers)
 	{
-		free(*numbers);
-		*numbers = NULL;
+		free(numbers);
+		numbers = NULL;
 	}
 	if (!data)
 		return ;

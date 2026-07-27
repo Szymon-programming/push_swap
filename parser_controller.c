@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:02:42 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 16:40:23 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:55:05 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int	*get_parsed_numbers(int argc, char *argv[], int i, int *size)
 	int		split_argc;
 	char	**split_argv;
 
-	split_argv = ft_split(argv[i], ' ');
-	split_argc = get_matrix_size(split_argv);
 	if (argc - i > 1)
 	{
 		*size = (argc - i);

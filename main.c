@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 11:25:37 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 17:27:25 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:22:02 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	main(int argc, char *argv[])
 	t_options	options;
 	t_data		data;
 
+	numbers = NULL;
 	size = 0;
+	ft_bzero(&data, sizeof(t_data));
 	if (argc == 1)
 		exit(0);
 	i = init_and_check(argc, argv, &options);
@@ -29,9 +31,7 @@ int	main(int argc, char *argv[])
 	ft_bzero(&data.bench, sizeof(t_bench));
 	numbers = get_parsed_numbers(argc, argv, i, &size);
 	if (numbers == NULL)
-		exit_error();
-	i = stack_op_con(numbers, size, &options, &data);
-	if (options.bench == 1)
-		print_bench(&data, &options);
+		exit_and_free(&data, numbers);
+	stack_op_con(numbers, size, &options, &data);
 	return (0);
 }
