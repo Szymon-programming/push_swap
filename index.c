@@ -6,12 +6,11 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 17:11:56 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/27 12:49:44 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 14:51:59 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void index_stack(t_stack *s)
 {

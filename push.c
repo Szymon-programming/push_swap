@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 11:23:36 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/20 14:12:41 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 15:02:27 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 
 static void	push(t_stack *dest, t_stack *src)
 {
-	int	value;
+	t_node *node;
 
-	if (stack_is_empty(src))
+	if (!src || !src->top)
 		return ;
-	value = stack_pop(src);
-	stack_push(dest, value);
+	node = src->top;
+	src->top = node->next;
+	if (src->top != NULL)
+		src->top->prev = NULL;
+	else
+		src->bottom = NULL;
+	src->size--;
+	node->next = dest->top;
+	node->prev = NULL;
+	if (dest->top != NULL)
+		dest->top->prev = node;
+	else
+		dest->bottom = node;
+	dest->top = node;
+	dest->size++;
 }
 
 void	pa(t_stack *a, t_stack *b)

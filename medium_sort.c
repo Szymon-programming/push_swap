@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 14:55:37 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 13:05:51 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 15:02:07 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ static void	push_to_a(t_data *data)
 {
 	int max_position;
 
-	index_stack(data->b);
 	max_position = get_max_position(data->b);
 	bring_to_top_b(data, max_position);
 	do_operation(data, "pa");
