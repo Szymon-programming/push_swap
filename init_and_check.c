@@ -6,14 +6,12 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:02:13 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:15:21 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// inicjalizuje flagi do struktury odpowiedzialnej za wywołanie programu
-// dobiera, czy program został wywołany z --simple, --bench, etc.
 static void	init_options(t_options *options)
 {
 	options->bench = 0;
@@ -23,8 +21,6 @@ static void	init_options(t_options *options)
 	options->adaptive = 0;
 }
 
-// sprawdza flagi, wykonuje się dopóki trafia na flagi, jeśli trafi na coś innego zwraca wskażnik na indeks
-// na którym konczą się flagi
 int	check_flags(int argc, char *argv[], t_options *options)
 {
 	int	i;
@@ -38,13 +34,12 @@ int	check_flags(int argc, char *argv[], t_options *options)
 				return (-1);
 		}
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (i);
 }
 
-// sprawdza czy dana wartość z argv[i] jest flagą
 int	is_flag(char *str)
 {
 	if (str[0] == '-' && str[1] == '-')
@@ -52,8 +47,6 @@ int	is_flag(char *str)
 	return (0);
 }
 
-// wywołuje go main, jest odpowiedzialny za inicjalizację flag i sprawdzenie co weszło do programu, oraz
-// czy to co weszło było prawidłowymi argumentami
 int	init_and_check(int argc, char *argv[], t_options *options)
 {
 	int	i;

@@ -6,14 +6,12 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 10:27:25 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:36:50 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// funkcja sprawdzająca poprawność znaków, gdy mamy poprawne znaki zwraca 0
-// w przypadku braku poprawności (argument nie jest liczbą) zwraca -1;
 static int	ft_is_numeric(char *str)
 {
 	int	i;
@@ -32,9 +30,6 @@ static int	ft_is_numeric(char *str)
 	return (0);
 }
 
-// funkcja odpowiedzialna za przetowrzenie stringa argumentu na int i
-// wpisanie go do tablicy, która będzie przechowywać wszystkie liczby,
-// które później trafią do stosu A.
 static int	ft_atoi_owerflow(const char *str, int *error)
 {
 	const unsigned char	*n;
@@ -63,7 +58,6 @@ static int	ft_atoi_owerflow(const char *str, int *error)
 	return (*error = 0, (int)(result * sign));
 }
 
-// sprawdza, czy liczba która wchodzi do tablicy ma już tam swój duplikat
 static int	has_duplicate(int number, int *numbers, int size)
 {
 	int	i;
@@ -78,8 +72,6 @@ static int	has_duplicate(int number, int *numbers, int size)
 	return (0);
 }
 
-// funkcja odpowiedzialna za zażądzanie logiką pobierania liczb,
-// argumentów po flagach
 int	*parser(int argc, char *argv[], int n)
 {
 	int	current_number;

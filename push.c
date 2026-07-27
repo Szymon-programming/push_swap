@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 11:23:36 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/27 15:02:27 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:40:23 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	push(t_stack *dest, t_stack *src)
 {
-	t_node *node;
+	t_node	*node;
 
 	if (!src || !src->top)
 		return ;

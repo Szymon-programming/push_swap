@@ -6,13 +6,12 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:01:50 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:31:31 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:15:36 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// aktywuje konkretną flagę w strukturze - wywoływane przez set_specific_flag
 static void	activate_flag(int index, t_options *options)
 {
 	if (index == 0)
@@ -44,7 +43,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-// ustawia konkretną flagę w strukturze options na 1(odpowiednik true bo nie ma bool)
 int	set_specific_flag(char *argv, t_options *options)
 {
 	char	*flags[4];
@@ -61,7 +59,8 @@ int	set_specific_flag(char *argv, t_options *options)
 	{
 		if (ft_strcmp(argv, flags[i]) == 0)
 		{
-			if (options->simple || options->medium || options->complex || options->adaptive)
+			if (options->simple || options->medium
+				|| options->complex || options->adaptive)
 				return (-1);
 			activate_flag(i, options);
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 10:30:48 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/27 12:49:44 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:33:29 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,3 @@ void	free_data(t_data *data, int **numbers)
 	free_stack(&data->b);
 	ft_bzero(data, sizeof(t_data));
 }
-
-// void error_and_free(t_data *data, int **numbers, t_stack **stack)
-// {
-
-// }

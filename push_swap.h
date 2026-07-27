@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/27 12:39:27 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:12:29 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int		check_flags(int argc, char *argv[], t_options *options);
 int		*parser(int argc, char *argv[], int n);
 int		*get_parsed_numbers(int argc, char *argv[], int i, int *size);
 void	exit_error(void);
-int		stack_operations_controller(int *numbers, int size, t_options *options, t_data *data);
+int		stack_op_con(int *numbers, int size, t_options *options, t_data *data);
 
 //funkcje benchmoda
 void	print_bench(t_data *data, t_options *options);

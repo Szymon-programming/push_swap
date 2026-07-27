@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 14:55:37 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 15:02:07 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:40:23 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	push_to_b(t_data *data, int *i, int chunk_size)
 
 static void	push_to_a(t_data *data)
 {
-	int max_position;
+	int	max_position;
 
 	max_position = get_max_position(data->b);
 	bring_to_top_b(data, max_position);
@@ -66,8 +66,8 @@ static void	push_to_a(t_data *data)
 
 void	chank_sort(t_data *data)
 {
-	int chunk_size;
-	int i;
+	int	chunk_size;
+	int	i;
 
 	chunk_size = ft_sqrt(data->a->size) + 7;
 	i = 0;

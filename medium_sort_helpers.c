@@ -6,13 +6,12 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 14:55:09 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:31:31 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:40:23 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Newton-Raphson
 int	ft_sqrt(int number)
 {
 	long	x;
@@ -36,7 +35,7 @@ void	bring_to_top_b(t_data *data, int position)
 	int	shifts;
 
 	if (position <= 0)
-		return;
+		return ;
 	stack_size = data->b->size;
 	if (position <= stack_size / 2)
 	{

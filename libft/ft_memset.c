@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 10:24:26 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/06/26 12:12:47 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:18:50 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*tymczasowy;
+	unsigned char	*temporary;
 
-	tymczasowy = (unsigned char *)s;
+	temporary = (unsigned char *)s;
 	while (n > 0)
 	{
-		*tymczasowy = (unsigned char)c;
-		tymczasowy++;
+		*temporary = (unsigned char)c;
+		temporary++;
 		n--;
 	}
 	return (s);

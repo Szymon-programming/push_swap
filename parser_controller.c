@@ -6,14 +6,12 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:02:42 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:40:23 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// zlicza ilość słów zwróconych przez splita, przekazuje tą ilość do
-// parsera, żeby wiedzieć ile miejsca alokować, jest to nowe argc
 static int	get_matrix_size(char **split_argv)
 {
 	int	i;
@@ -24,7 +22,6 @@ static int	get_matrix_size(char **split_argv)
 	return (i);
 }
 
-// zwalnia kazdą szufladkę po kolei, po czym zwalnia cały obiekt (szafę)
 static void	free_matrix(char **split_argv)
 {
 	int	i;
@@ -38,14 +35,11 @@ static void	free_matrix(char **split_argv)
 	free(split_argv);
 }
 
-// funkcja zarządzająca, czy trzeba zesplitować wartości
-// które wpadły jako "1 2 3 4 5"
-// czy od razu wrzucić wartości 1 2 3 4 5
 int	*get_parsed_numbers(int argc, char *argv[], int i, int *size)
 {
 	int		*numbers;
 	int		split_argc;
-	char 	**split_argv;
+	char	**split_argv;
 
 	split_argv = ft_split(argv[i], ' ');
 	split_argc = get_matrix_size(split_argv);

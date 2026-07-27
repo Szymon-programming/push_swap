@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 16:22:15 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:18:04 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:40:23 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	bring_to_top_a(t_data *data, int position)
 	int	shifts;
 
 	if (position <= 0)
-		return;
+		return ;
 	stack_size = data->a->size;
 	if (position <= stack_size / 2)
 	{

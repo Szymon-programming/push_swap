@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 15:01:35 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 12:38:25 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:37:45 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	init_stack(t_stack *s, int *numbers, int size)
 	}
 }
 
-int	stack_operations_controller(int *numbers, int size, t_options *options, t_data *data)
+int	stack_op_con(int *numbers, int size, t_options *options, t_data *data)
 {
 	data->a = stack_new();
 	data->b = stack_new();

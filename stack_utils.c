@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:12:27 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:36:50 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	stack_peek(const t_stack *s)
 	return (s->top->value);
 }
 
-// pusty stack/1 element - nie wchodzi
 int	stack_is_sorted(const t_stack *s)
 {
 	t_node	*cur;
