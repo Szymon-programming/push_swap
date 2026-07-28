@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:01:33 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/27 18:13:40 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/28 10:00:00 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	chank_sort(t_data *data);
 void	adaptive_sort(t_data *data);
 void	bring_to_top_b(t_data *data, int position);
 int		ft_sqrt(int number);
+void	sort_force_easy(t_data *data);
 
 //funkcje parsera
 int		init_and_check(int argc, char *argv[], t_options *options);

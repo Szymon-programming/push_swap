@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 15:01:35 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/28 09:08:43 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/28 10:09:20 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,14 @@
 static void	sorting_method_chooser(t_data *data, t_options *options)
 {
 	if (options->simple == 1)
-		selection_sort_with_index(data);
+	{
+		if (data->a->size == 2)
+			do_operation(data, "ra");
+		else if (data->a->size == 3)
+			sort_force_easy(data);
+		else
+			selection_sort_with_index(data);
+	}
 	else if (options->medium == 1)
 		chank_sort(data);
 	else if (options->complex == 1)

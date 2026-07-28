@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 10:45:41 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/28 09:48:39 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	swap(t_stack *s)
 	t_node	*sec;
 
 	if (s->size < 2)
-		return ;
+		return ;	
 	first = s->top;
 	sec = s->top->next;
 	first->next = sec->next;
