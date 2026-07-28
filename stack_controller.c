@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 15:01:35 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/27 18:44:24 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/28 09:08:43 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	stack_op_con(int *numbers, int size, t_options *options, t_data *data)
 	data->disorder = compute_disorder(data->a);
 	if (stack_is_sorted(data->a) == 1)
 	{
+		if (options->bench == 1)
+			print_bench(data, options);
 		free_data(data, numbers);
 		exit(0);
 	}

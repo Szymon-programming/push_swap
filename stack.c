@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:12:27 by jasiuda           #+#    #+#             */
-/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/28 09:16:19 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	stack_pop(t_stack *s)
 	t_node	*node;
 	int		value;
 
-	if (!s && !s->top)
+	if (!s || !s->top)
 		return (0);
 	node = s->top;
 	value = node->value;

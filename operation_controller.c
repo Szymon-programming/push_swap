@@ -6,7 +6,7 @@
 /*   By: schoinsk <schoinsk@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 14:43:04 by schoinsk          #+#    #+#             */
-/*   Updated: 2026/07/23 15:03:30 by schoinsk         ###   ########.fr       */
+/*   Updated: 2026/07/28 09:23:13 by schoinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,7 @@ void	do_operation(t_data *data, char *operation)
 		ra(data->a);
 	else if (ft_strncmp(operation, "rb", 3) == 0)
 		rb(data->b);
+	else if (ft_strncmp(operation, "rr", 3) == 0)
+		rr(data->a, data->b);
 	count_operations(data, operation);
 }
